@@ -1,3 +1,3 @@
-if [ ! -d "./dist" ]; then
-  mkdir dist
+if [ ! -d "./lib" ]; then
+  mkdir lib
 fi
