@@ -1,0 +1,13 @@
+{
+    "brackets": "never",
+    "duplicates": true,
+    "efficient": "always",
+    "namingConvention": "BEM",
+    "noImportant": true,
+    "prefixVarsWithDollar": "always",
+    "reporter": "stylint-stylish",
+    "semicolons": "never",
+    "sortOrder": "alphabetical",
+    "verbose": true,
+    "zIndexNormalize": true
+}

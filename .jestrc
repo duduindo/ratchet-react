@@ -1,0 +1,10 @@
+{
+  "coverageReporters": [
+    "text",
+    "text-summary"
+  ],
+  "collectCoverageFrom": [
+    "**/src/**.jsx",
+    "**/src/**.js"
+  ]
+}

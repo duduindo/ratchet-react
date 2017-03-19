@@ -1,0 +1,76 @@
+{
+  "name": "ratchet-react",
+  "version": "1.0.0",
+  "description": "Ratchet: Build mobile apps with simple CSS and React components.",
+  "main": "index.js",
+  "jsnext:main": "src/react/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/duduindo/ratchet-react.git"
+  },
+  "keywords": [
+    "app",
+    "ratchet",
+    "react",
+    "js",
+    "mobile"
+  ],
+  "author": "Eduardo Paixão (@duduindo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duduindo/ratchet-react/issues"
+  },
+  "homepage": "https://github.com/duduindo/ratchet-react#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.5.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-jest": "^1.0.0",
+    "gulp-jest-cli": "0.0.3",
+    "gulp-stylint": "^4.0.0",
+    "gulp-watch": "^4.3.11",
+    "http-server": "^0.9.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.2",
+    "minify": "^2.0.13",
+    "react-addons-test-utils": "^15.4.2",
+    "stylint-stylish": "^1.4.0",
+    "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^4.0.0"
+  },
+  "config": {
+    "path_src": "src",
+    "path_dist": "dist"
+  },
+  "scripts": {
+    "create-dist": "sh create-folder-dist.sh",
+    "css-prod": "stylus --sourcemap-inline ./$npm_package_config_path_src/stylus/common.styl -o ./$npm_package_config_path_dist/common.min.css",
+    "js": "NODE_ENV=production browserify --transform babelify ./$npm_package_config_path_src/react/Common.jsx --outfile ./$npm_package_config_path_dist/common.js --extension=.jsx",
+    "js-compress": "minify  ./$npm_package_config_path_dist/common.js > ./$npm_package_config_path_dist/common.min.js",
+    "js-prod": "npm run js && npm run js-compress && rm ./$npm_package_config_path_dist/common.js && npm run notify",
+    "notify": "notify-send 'Facerank' 'Production'",
+    "serve": "php -S localhost:8000 -t .",
+    "clean": "jest -u",
+    "test": "gulp",
+    "start": "npm run create-dist && npm run js-prod && npm run css-prod"
+  }
+}
