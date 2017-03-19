@@ -4,6 +4,7 @@ import {shallow, render, mount} from 'enzyme';
 
 //  My scripts
 import { RTHeader } from '../../src/react/';
+//import { RTHeader } from '../../lib/common.min.js';
 
 
 describe('Header', () => {

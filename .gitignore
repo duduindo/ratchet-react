@@ -1,4 +1,4 @@
 node_modules/
-dist/
+lib/
 coverage/
 test/js/__snapshots__/
